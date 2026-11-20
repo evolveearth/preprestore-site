@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" data-chakra="root" data-strength="earthy">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>PrepRestore — Partner Share Links &amp; Referral Tracker</title>
+  <link rel="stylesheet" href="https://css.evolveearth.com/chakras.css">
+  <link rel="stylesheet" href="https://evolveearth.com/assets/v3/chakras-v3.css">
+  <script src="https://evolveearth.com/assets/v3/chakra-shell.js?v=3.0.7" defer></script>
+</head>
+<body>
+  <header class="site-header"><div class="container"><nav class="nav" aria-label="Main"><a class="brand" href="https://preprestore.com/">PrepRestore</a><div class="nav-links"><a href="https://preprestore.com/">Home</a><a class="btn" href="#links">Get Share Links</a></div></nav></div></header>
+  <main id="main">
+    <section class="section" id="links">
+      <div class="container stack">
+        <span class="kicker">PrepRestore · Referral Partner Links</span>
+        <h1 class="h1">Share PrepRestore &amp; Track Your Referrals</h1>
+        <p class="lead">Strictly isolated storm-prep kits, verified contractor directory seats, and carrier loss-prevention baselines. Florida insurance-paid roof repairs are excluded per Florida Statute 489.147. Paid items split ~10% across the infinite referral chain (5% direct, 2.5% Tier 2, 1.25% Tier 3, Paid-When-Paid).</p>
+        <div class="card stack">
+          <label for="p-handle">Enter Your Partner Handle</label>
+          <input id="p-handle" type="text" class="input" value="partner108" placeholder="your_handle">
+          <div id="offer-rows" class="rows"><div class="row-item"><span data-tmpl="https://preprestore.com/?offer=prod-pr-01&amp;ref={HANDLE}"><strong>14-Day HIEMA Hurricane &amp; Storm-Prep Kit + Pre-Storm LiDAR Roof Baseline ($149 kit + guide):</strong> 8% pool (4.0% direct + 2^-k infinite downline) · <code>https://preprestore.com/?offer=prod-pr-01&amp;ref=partner108</code></span><button type="button" class="btn btn--quiet btn--sm" data-copy-tmpl="https://preprestore.com/?offer=prod-pr-01&amp;ref={HANDLE}">Copy Share Link</button></div><div class="row-item"><span data-tmpl="https://preprestore.com/?offer=prod-pr-02&amp;ref={HANDLE}"><strong>Verified Catastrophe Roofer, Water Mitigation &amp; Mold-Safe Restoration Partner Seat ($497 / month):</strong> 10% pool (5.0% direct + 2^-k infinite downline) · <code>https://preprestore.com/?offer=prod-pr-02&amp;ref=partner108</code></span><button type="button" class="btn btn--quiet btn--sm" data-copy-tmpl="https://preprestore.com/?offer=prod-pr-02&amp;ref={HANDLE}">Copy Share Link</button></div><div class="row-item"><span data-tmpl="https://preprestore.com/?offer=prod-pr-03&amp;ref={HANDLE}"><strong>Carrier Pre-Loss LiDAR Verification &amp; NIBS $1:$4-$11 Mitigation Program ($2,500 / month):</strong> 10% pool (5.0% direct + 2^-k infinite downline) · <code>https://preprestore.com/?offer=prod-pr-03&amp;ref=partner108</code></span><button type="button" class="btn btn--quiet btn--sm" data-copy-tmpl="https://preprestore.com/?offer=prod-pr-03&amp;ref={HANDLE}">Copy Share Link</button></div><div class="row-item"><span data-tmpl="https://preprestore.com/checklist/?ref={HANDLE}"><strong>PrepRestore Printable 14-Day Storm Checklist Sign-Up ($0 Sign-Up):</strong> Free sign-up (locks permanent upline tree) · <code>https://preprestore.com/checklist/?ref=partner108</code></span><button type="button" class="btn btn--quiet btn--sm" data-copy-tmpl="https://preprestore.com/checklist/?ref={HANDLE}">Copy Share Link</button></div></div>
+          <p id="copy-note" class="small">Disclose paid referral links clearly per Federal Trade Commission guidelines.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="fine"><span>PrepRestore Partner Program</span><a href="https://preprestore.com/privacy/">Privacy</a></div></div></footer>
+  <script>
+  (function(){
+    var inp = document.getElementById("p-handle");
+    function clean(v){ return String(v||"partner108").toLowerCase().replace(/[^a-z0-9_-]/g,"") || "partner108"; }
+    function refresh(){
+      var h = clean(inp.value);
+      document.querySelectorAll("[data-tmpl]").forEach(function(sp){
+        var c = sp.querySelector("code");
+        if (c) c.textContent = sp.getAttribute("data-tmpl").replace("{HANDLE}", h);
+      });
+    }
+    inp.addEventListener("input", refresh);
+    document.querySelectorAll("[data-copy-tmpl]").forEach(function(b){
+      b.addEventListener("click", function(){
+        var u = b.getAttribute("data-copy-tmpl").replace("{HANDLE}", clean(inp.value));
+        if (navigator.clipboard) navigator.clipboard.writeText(u);
+        document.getElementById("copy-note").textContent = "Copied: " + u;
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
